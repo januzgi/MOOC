@@ -1,0 +1,17 @@
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over palvelin:
+pyynnön headeri Content-Type kertoo
+että mukana oleva data on JSONia
+
+Selaimen jo lataaman js-koodi 
+sisältää tapahtumankäsittelijän, jota 
+kutsutaan lomakkeen lähetyksessä (submit).
+
+Koodi luo muistiinpanon ja lisää sen 
+muistiinpanojen listaan. Nyt muistiinpanojen
+lista renderöidään uudelleen ja
+muistiinpano lähetetään palvelimelle.
+end note
+
+palvelin-->selain: {"message":"note created"}
