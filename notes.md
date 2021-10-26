@@ -1,5 +1,7 @@
 # MOOC React, TS & muuta kertausta
 
+https://studies.cs.helsinki.fi/stats/courses/fullstackopen/submissions
+
 ---
 
 ## 0: Yleistä webbisovelluksista, HTMLstä
@@ -10,6 +12,9 @@
 
 ---
 
-## 1:
+## 1: Reactin alkeet
 
-https://fullstackopen.com/osa1
+- React komponenttien JSX käännetään JavaScriptiksi lopulta
+- JSX on XML kaltainen, mutta jokainen tägi tarvitsee sulkea e. <br />
+- Komponenttien nimet alkaa aina Isolla
+- Komponenetti sisältää aina juurielementin, myös taulukollinen kompoi käy
