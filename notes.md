@@ -12,9 +12,23 @@ https://studies.cs.helsinki.fi/stats/courses/fullstackopen/submissions
 
 ---
 
-## 1: Reactin alkeet
+## 1: Reactin ja JavaScriptin alkeiden kertaus
 
 - React komponenttien JSX käännetään JavaScriptiksi lopulta
 - JSX on XML kaltainen, mutta jokainen tägi tarvitsee sulkea e. <br />
 - Komponenttien nimet alkaa aina Isolla
 - Komponenetti sisältää aina juurielementin, myös taulukollinen kompoi käy
+
+- forEach -loopeissa muuttujan arvo pysyy loopin scopessa
+- Käytä taulukoiden kanssa ennemmin concat -metodia, jotta ei muuta vanhaa vaan luo uuden tarvittavilla lisäyksillä
+
+```javascript
+const t = [1, 2, 3, 4, 5];
+
+const [first, second, ...rest] = t;
+
+console.log(first, second); // tulostuu 1, 2
+console.log(rest); // tulostuu [3, 4 ,5]
+```
+
+1.5h
