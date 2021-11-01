@@ -31,4 +31,11 @@ console.log(first, second); // tulostuu 1, 2
 console.log(rest); // tulostuu [3, 4 ,5]
 ```
 
-1.5h
+- JS:ssä this -arvo määrittyy sen mukaan miten metodia on kutsuttu
+- Pidä tilan määrittely kaikkien sitä tarvitsevien komponenttien suurimmassa yhteisessä vanhemmassa
+- Nimeä on[Event] propseille jotka esittää eventtejä ja handle[Event] metodeille, jotka sitten händlää nuo eventit.
+
+- lisäämällä koodiin "debugger" saa koodin suorituksen pysäytettyä k.o. kohtaan devikonsolissa
+- Kutsu hookkeja ainoastaan React-komponentin määrittelevän funktion rungosta. Ei ehtolauseeesta, ei loopista, eikä muiden funktioiden kuin sen määrittelevän sisältä.
+
+  4h
