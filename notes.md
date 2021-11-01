@@ -37,5 +37,3 @@ console.log(rest); // tulostuu [3, 4 ,5]
 
 - lisäämällä koodiin "debugger" saa koodin suorituksen pysäytettyä k.o. kohtaan devikonsolissa
 - Kutsu hookkeja ainoastaan React-komponentin määrittelevän funktion rungosta. Ei ehtolauseeesta, ei loopista, eikä muiden funktioiden kuin sen määrittelevän sisältä.
-
-  4h
