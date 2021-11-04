@@ -38,6 +38,10 @@ console.log(rest); // tulostuu [3, 4 ,5]
 - lisäämällä koodiin "debugger" saa koodin suorituksen pysäytettyä k.o. kohtaan devikonsolissa
 - Kutsu hookkeja ainoastaan React-komponentin määrittelevän funktion rungosta. Ei ehtolauseeesta, ei loopista, eikä muiden funktioiden kuin sen määrittelevän sisältä.
 
-https://fullstackopen.com/osa2/lomakkeiden_kasittely
+---
 
-2.5h
+## 2: Reactia lissöö ja palvelinhommia
+
+- Funktion useEffect toisella parametrilla tarkennetaan kuinka usein efekti suoritetaan. Tyhjä taulukko [] tarkoittaa, että efekti suoritetaan ainoastaan komponentin ensimmäisen renderöinnin jälkeen.
+
+  3.5h
