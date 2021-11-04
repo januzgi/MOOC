@@ -16,7 +16,7 @@ const App = () => {
       .then((r) => {
         setPersons(r.data)
       })
-  })
+  }, [])
 
   const handleNewName = (event) => {
     setNewName(event.target.value)
