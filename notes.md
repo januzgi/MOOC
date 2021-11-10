@@ -44,4 +44,4 @@ console.log(rest); // tulostuu [3, 4 ,5]
 
 - Funktion useEffect toisella parametrilla tarkennetaan kuinka usein efekti suoritetaan. Tyhjä taulukko [] tarkoittaa, että efekti suoritetaan ainoastaan komponentin ensimmäisen renderöinnin jälkeen.
 
-  10.5h
+  12.5h

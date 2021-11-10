@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import Filter from "./components/Filter"
 import PersonForm from "./components/PersonForm"
 import Persons from "./components/Persons"
+import Notification from "./components/Notification"
 import personsService from "./services/persons"
 
 const App = () => {
   const [persons, setPersons] = useState([])
   const [newName, setNewName] = useState("")
   const [newNumber, setNewNumber] = useState("")
+  const [notificationMessage, setNotificationMessage] = useState(null)
+  const [notificationType, setNotificationType] = useState("success")
   const [searchFilter, setSearchFilter] = useState("")
 
   useEffect(() => {
@@ -30,16 +33,6 @@ const App = () => {
     setSearchFilter(event.target.value.toLowerCase())
   }
 
-  const editNumber = (name, newNumber) => {
-    personsService
-      .update(name, newNumber)
-      .then(returnedPersons => {
-        setPersons(persons.concat(returnedPersons))
-        setNewName("")
-        setNewNumber("")
-      })
-  }
-
   const addPerson = (event) => {
     event.preventDefault();
     let names = persons.map(x => x.name);
@@ -56,6 +49,7 @@ const App = () => {
           setPersons(persons.concat(returnedPersons))
           setNewName("")
           setNewNumber("")
+          showNotification(`Added "${newNameObject.name}"`, "success")
         })
     } else {
       let text = `"${newName}" is already added to the phonebook, replace the old number with a new one?`
@@ -74,6 +68,10 @@ const App = () => {
                 : p))
             setNewName("")
             setNewNumber("")
+            showNotification(`Updated number of "${returnedPerson.name}"`, "success")
+          })
+          .catch(error => {
+            showNotification(`"${person.name}" not found in server.`, "error")
           })
       }
     }
@@ -82,14 +80,24 @@ const App = () => {
   const handleDeletePerson = (id) => {
     personsService
       .deletePerson(id)
-      .then(() => {
+      .then(r => {
+        showNotification("Person deleted.", "success")
         setPersons(persons.filter(x => x.id !== id))
       })
+  }
+
+  const showNotification = (message, type) => {
+    setNotificationMessage(message)
+    type === "error" ? setNotificationType("error") : setNotificationType("success")
+    setTimeout(() => {
+      setNotificationMessage(null)
+    }, 2500)
   }
 
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message={notificationMessage} type={notificationType} />
       <Filter searchFilter={searchFilter} handleFiltering={handleFiltering} />
       <PersonForm
         addPerson={addPerson}
@@ -106,7 +114,6 @@ const App = () => {
       />
     </div>
   )
-
 }
 
 export default App
