@@ -30,6 +30,16 @@ const App = () => {
     setSearchFilter(event.target.value.toLowerCase())
   }
 
+  const editNumber = (name, newNumber) => {
+    personsService
+      .update(name, newNumber)
+      .then(returnedPersons => {
+        setPersons(persons.concat(returnedPersons))
+        setNewName("")
+        setNewNumber("")
+      })
+  }
+
   const addPerson = (event) => {
     event.preventDefault();
     let names = persons.map(x => x.name);
@@ -48,7 +58,24 @@ const App = () => {
           setNewNumber("")
         })
     } else {
-      alert(`${newName} is already added to phonebook.`)
+      let text = `"${newName}" is already added to the phonebook, replace the old number with a new one?`
+      const confirmed = window.confirm(text)
+
+      if (confirmed) {
+        const person = persons.find(p => p.name === newName)
+        const changedPerson = { ...person, number: newNumber }
+
+        personsService
+          .update(person.id, changedPerson)
+          .then(returnedPerson => {
+            setPersons(persons.map(p =>
+              p.id === person.id
+                ? returnedPerson
+                : p))
+            setNewName("")
+            setNewNumber("")
+          })
+      }
     }
   }
 
@@ -72,7 +99,11 @@ const App = () => {
         handleNewNumber={handleNewNumber}
       />
       <h2>Numbers</h2>
-      <Persons persons={persons} searchFilter={searchFilter} deletePerson={handleDeletePerson} />
+      <Persons
+        persons={persons}
+        searchFilter={searchFilter}
+        deletePerson={handleDeletePerson}
+      />
     </div>
   )
 
