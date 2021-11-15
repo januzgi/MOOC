@@ -46,4 +46,11 @@ console.log(rest); // tulostuu [3, 4 ,5]
 
 ## 3: Backend Node.js, Express, MongoDB
 
-2h
+- Suosituksena safe ja idempotence HTTP kutsuille:
+- REST:iä käyttäen HTTP GETit on aina safe, eli ne eivät aiheuta palvelimella sivuvaikutuksia kuten muuta tietokannan tilaa
+- HEAD sama kuin yllä, mutta se palauttaa pelkän statuskoodin ja headerit
+- Jos pyynnöillä on sivuvaikutuksia (GET, HEAD, PUT, DELETE) niin ne on oltava idempotentteja eli tulos on sama riippumatta pyynnön suorituskertojen määrästä
+
+- Käyttöönotettu json-parseri on middlewarea
+
+4h
