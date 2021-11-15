@@ -51,6 +51,4 @@ console.log(rest); // tulostuu [3, 4 ,5]
 - HEAD sama kuin yllä, mutta se palauttaa pelkän statuskoodin ja headerit
 - Jos pyynnöillä on sivuvaikutuksia (GET, HEAD, PUT, DELETE) niin ne on oltava idempotentteja eli tulos on sama riippumatta pyynnön suorituskertojen määrästä
 
-- Käyttöönotettu json-parseri on middlewarea
-
 4h
