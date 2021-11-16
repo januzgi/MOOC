@@ -51,4 +51,6 @@ console.log(rest); // tulostuu [3, 4 ,5]
 - HEAD sama kuin yllä, mutta se palauttaa pelkän statuskoodin ja headerit
 - Jos pyynnöillä on sivuvaikutuksia (GET, HEAD, PUT, DELETE) niin ne on oltava idempotentteja eli tulos on sama riippumatta pyynnön suorituskertojen määrästä
 
-4h
+https://fullstackopen.com/osa3/sovellus_internetiin#same-origin-policy-ja-cors
+
+7h
