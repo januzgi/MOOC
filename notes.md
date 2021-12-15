@@ -51,6 +51,10 @@ console.log(rest); // tulostuu [3, 4 ,5]
 - HEAD sama kuin yllä, mutta se palauttaa pelkän statuskoodin ja headerit
 - Jos pyynnöillä on sivuvaikutuksia (GET, HEAD, PUT, DELETE) niin ne on oltava idempotentteja eli tulos on sama riippumatta pyynnön suorituskertojen määrästä
 
-https://fullstackopen.com/osa3/sovellus_internetiin#same-origin-policy-ja-cors
+- Chromen devikonsolilla voi debugata Nodea äppiä käynnistämällä sovellus `node --inspect index.js` komennolla
+- Epäile kaikkea ja systemaattisesti sulje pois eri osia sovelluksesta, joissa vika ei ainakaan ole. Stop and fix
+- Tietokannan rakennetta miettiessä "datamalli kannattaa valita siten, että se tekee yleisimpien operaatioiden suorituksen nopeaksi ja helpoksi."
 
-7h
+https://fullstackopen.com/osa3/tietojen_tallettaminen_mongo_db_tietokantaan#tietokannan-kaytto-reittien-kasittelijoissa
+
+8,5h
